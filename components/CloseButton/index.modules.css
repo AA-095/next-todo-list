@@ -1,0 +1,10 @@
+.closeButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .closeButtonIcon {
+    font-size: 18px;
+  }
+  
