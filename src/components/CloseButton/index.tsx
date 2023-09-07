@@ -6,8 +6,7 @@ type Props = {
 } ;
 
 export const CloseButton: FC<Props> = ({ onClick, ...restProps }) => {
-  const buttonStyle = {
-  };
+  const buttonStyle = {};
 
   return (
     <button
