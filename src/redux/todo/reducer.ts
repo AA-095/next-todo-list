@@ -1,25 +1,32 @@
-import { ADD_TODO, DELETE_TODO, TOGGLE_TODO, TodoActionTypes } from './types'
+import { ADD_TODO, DELETE_TODO, TOGGLE_TODO, TodoState, TodoActionTypes } from './types'
 
-let nextTodoId = 0
+const initialState: TodoState = {
+  todos: [],
+}
 
-export const addTodo = (text: string): TodoActionTypes => ({
-  type: ADD_TODO,
-  payload: {
-    id: nextTodoId++,
-    text,
-  },
-})
-
-export const deleteTodo = (id: number): TodoActionTypes => ({
-  type: DELETE_TODO,
-  payload: {
-    id,
-  },
-})
-
-export const toggleTodo = (id: number): TodoActionTypes => ({
-  type: TOGGLE_TODO,
-  payload: {
-    id,
-  },
-})
+export const todoReducer = (state = initialState, action: TodoActionTypes): TodoState => {
+  switch (action.type) {
+    case ADD_TODO:
+      return {
+        ...state,
+        todos: [
+          ...state.todos,
+          { id: action.payload.id, text: action.payload.text, completed: false },
+        ],
+      }
+    case DELETE_TODO:
+      return {
+        ...state,
+        todos: state.todos.filter((todo) => todo.id !== action.payload.id),
+      }
+    case TOGGLE_TODO:
+      return {
+        ...state,
+        todos: state.todos.map((todo) =>
+          todo.id === action.payload.id ? { ...todo, completed: !todo.completed } : todo,
+        ),
+      }
+    default:
+      return state
+  }
+}
