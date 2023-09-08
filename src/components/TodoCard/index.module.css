@@ -1,0 +1,12 @@
+.todocard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.todoCard_text {
+  margin-left: 10px;
+  flex-grow: 1;
+}
