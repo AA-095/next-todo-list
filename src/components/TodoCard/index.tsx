@@ -12,9 +12,9 @@ type Props = {
 
 export const TodoCard: FC<Props> = ({ todoText, isChecked, onDelete, onToggle }) => {
   return (
-    <div className={styles.card}>
+    <div className={styles.todocard}>
       <CheckBox checked={isChecked} onChange={onToggle} />
-      <p className={styles.todoText}>{todoText}</p>
+      <p className={styles.todoCard_text}>{todoText}</p>
       <CloseButton onClick={onDelete} />
     </div>
   )
