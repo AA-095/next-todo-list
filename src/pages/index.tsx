@@ -113,13 +113,13 @@
 //   )
 // }
 
-import { ExampleWithCloseButton } from "@/components/ExampleWithCloseButton";
-import {CloseButton} from "../components/CloseButton";
+// import { ExampleWithCloseButton } from '@/components/ExampleWithCloseButton'
+// import { CloseButton } from '../components/CloseButton'
 
-export default function Home() {
-  return (
-    <h1 className="flex flex-col items-center justify-center min-h-screen">
-      <ExampleWithCloseButton />
-    </h1>
-  )
-}
+// export default function Home() {
+//   return (
+//     <h1 className='flex flex-col items-center justify-center min-h-screen'>
+//       <ExampleWithCloseButton />
+//     </h1>
+//   )
+// }
